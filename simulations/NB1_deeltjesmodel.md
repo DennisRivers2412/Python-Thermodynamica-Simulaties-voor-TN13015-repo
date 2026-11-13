@@ -15,6 +15,15 @@ Als startopdracht modelleren we twee fietsers. Doorloop de bovenstaande drie sta
 
 
 
+**Uitwerking Excercise 1**
+
+1. geen zin in
+2. Formules:
+    x = v * t
+    v = a * t
+3. Wat betekent dit uberhaupt
+
+
 ## Numerieke modellen
 Om een simulatie te maken, splitsen we het volledige proces op in kleine stappen met een vaste (tijd)interval, zoals in onderstaande figuur. Elk stapje krijgt een nummer, van $0$ tot $N$. We gebruiken de letter $i$ om naar een specifieke stap te verwijzen.
 
@@ -34,7 +43,6 @@ We nemen als voorbeeld twee fietsers, waarbij de fietser 1 een eenparige bewegin
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-from numpy import arange
 
 # Beginwaarden
 dt = 0.25                  #s
@@ -77,6 +85,13 @@ Wat op zou kunnen vallen is dat de snelheid in een cel constant gehouden wordt (
 ```{exercise}
 Maak het tijdsinterval $dt$ groter en vergelijk de afgelegde weg in de tien seconde. Wat gebeurt er met de afgelegde weg als we $dt$ groter maken? Is dat logisch vanuit gezien de natuurkunde? En gezien de methode van discretisatie? Leg uit.
 ```
+
+
+**Uitwerking Excercise 2**
+
+De afgelegde weg verandert niet, omdat de dt alleen de nauwkeurigheid van de benadering bepaalt.
+Ja dat is logisch.
+Gezien de methode van discretisatie??? wat betekent dat
 
 
 <!-- Jouw antwoord hier  -->
@@ -134,8 +149,8 @@ print(this_particle)
 Nu we een object hebben, laten we eens kijken of we de eigenschappen van het object kunnen opvragen:
 
 ```python
-print("Massa van het deeltje " + str(this_particle.m) + " kg")
-print("Huidige positie is " + str(this_particle.r))
+print(f"Massa van het deeltje {str(this_particle.m)} kg")
+print(f"Huidige positie is {this_particle.r}")
 
 # oproepen van de functie 'update_position' met dt = 1.0 seconde
 this_particle.update_position(1.0)
@@ -151,13 +166,13 @@ that_particle = ParticleClass(m=1.0, v=[2.0, 0], r=[5.0, 0.0],R=1.0)
 ```
 
 ```python
-print("Huidige positie van this_particle " + str(this_particle.r))
-print("Huidige position van that_particle " + str(that_particle.r))
+print(f"Huidige positie van this_particle {this_particle.r}")
+print(f"Huidige position van that_particle {that_particle.r}")
 
 # oproepen van de functie 'update_position' met dt = 2.0 seconde
 that_particle.update_position(2.0)
-print("Nieuwe positie van this_particle " + str(this_particle.r))
-print("Nieuwe positie van that_particle " + str(that_particle.r))
+print(f"Nieuwe positie van this_particle {this_particle.r}")
+print(f"Nieuwe positie van that_particle {that_particle.r}")
 ```
 
 We kunnen ook een array van objecten maken.
@@ -180,6 +195,11 @@ print("Hoe een eigenschap (in dit geval: 'r') van het element van het array erui
 Gegeven bovenstaande particles die je hebt aangemaakt, hoe zien de posities er dan uit van die deeltjes?
 Voorspel en controleer vervolgens met onderstaande code.
 ```
+
+
+**Uitwerking Excercise 3**
+
+Geen y-waarde in enige richtingsvectoren van de deeltjes dus ze zitten alle 4 op een horizontaal lijntje op hoogte y = 0.0
 
 ```python
 import numpy as np
